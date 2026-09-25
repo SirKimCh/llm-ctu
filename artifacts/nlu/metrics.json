@@ -1,0 +1,278 @@
+{
+  "base_model": "vinai/phobert-base",
+  "device": "NVIDIA GeForce RTX 3050 6GB Laptop GPU",
+  "hyperparameters": {
+    "epochs_max": 20,
+    "patience": 4,
+    "batch_size": 16,
+    "learning_rate": 5e-05,
+    "weight_decay": 0.01,
+    "warmup_share": 0.1,
+    "max_len": 64,
+    "seed": 42
+  },
+  "dataset": {
+    "train": 1332,
+    "dev": 164,
+    "test": 173
+  },
+  "history": [
+    {
+      "epoch": 1,
+      "train_loss": 2.7489745631104423,
+      "intent_accuracy": 0.4146341463414634,
+      "slot_f1": 0.0,
+      "sentence_accuracy": 0.40853658536585363,
+      "seconds": 16.597421884536743
+    },
+    {
+      "epoch": 2,
+      "train_loss": 1.5217129850671405,
+      "intent_accuracy": 0.7560975609756098,
+      "slot_f1": 0.0273972602739726,
+      "sentence_accuracy": 0.6097560975609756,
+      "seconds": 17.06628727912903
+    },
+    {
+      "epoch": 3,
+      "train_loss": 0.6684349062187331,
+      "intent_accuracy": 0.926829268292683,
+      "slot_f1": 0.5,
+      "sentence_accuracy": 0.6829268292682927,
+      "seconds": 17.22706413269043
+    },
+    {
+      "epoch": 4,
+      "train_loss": 0.29086242123906103,
+      "intent_accuracy": 0.9390243902439024,
+      "slot_f1": 0.6466165413533834,
+      "sentence_accuracy": 0.8048780487804879,
+      "seconds": 16.951390504837036
+    },
+    {
+      "epoch": 5,
+      "train_loss": 0.1412451617375371,
+      "intent_accuracy": 0.9573170731707317,
+      "slot_f1": 0.6923076923076923,
+      "sentence_accuracy": 0.8353658536585366,
+      "seconds": 17.554516553878784
+    },
+    {
+      "epoch": 6,
+      "train_loss": 0.07150099495248426,
+      "intent_accuracy": 0.975609756097561,
+      "slot_f1": 0.8153846153846153,
+      "sentence_accuracy": 0.9024390243902439,
+      "seconds": 17.13270616531372
+    },
+    {
+      "epoch": 7,
+      "train_loss": 0.047323823041681735,
+      "intent_accuracy": 0.9939024390243902,
+      "slot_f1": 0.8208955223880597,
+      "sentence_accuracy": 0.9146341463414634,
+      "seconds": 17.90624737739563
+    },
+    {
+      "epoch": 8,
+      "train_loss": 0.031475852498607265,
+      "intent_accuracy": 0.975609756097561,
+      "slot_f1": 0.9206349206349206,
+      "sentence_accuracy": 0.9390243902439024,
+      "seconds": 17.401155948638916
+    },
+    {
+      "epoch": 9,
+      "train_loss": 0.014091208621504762,
+      "intent_accuracy": 0.9878048780487805,
+      "slot_f1": 0.9160305343511451,
+      "sentence_accuracy": 0.9573170731707317,
+      "seconds": 17.58777403831482
+    },
+    {
+      "epoch": 10,
+      "train_loss": 0.009853754719231455,
+      "intent_accuracy": 0.9878048780487805,
+      "slot_f1": 0.8992248062015504,
+      "sentence_accuracy": 0.9512195121951219,
+      "seconds": 17.053738594055176
+    },
+    {
+      "epoch": 11,
+      "train_loss": 0.006524206593721395,
+      "intent_accuracy": 0.975609756097561,
+      "slot_f1": 0.9302325581395349,
+      "sentence_accuracy": 0.9512195121951219,
+      "seconds": 17.994818449020386
+    },
+    {
+      "epoch": 12,
+      "train_loss": 0.006196422053367964,
+      "intent_accuracy": 0.9817073170731707,
+      "slot_f1": 0.9375,
+      "sentence_accuracy": 0.9573170731707317,
+      "seconds": 18.129948139190674
+    },
+    {
+      "epoch": 13,
+      "train_loss": 0.005109660102919277,
+      "intent_accuracy": 0.9878048780487805,
+      "slot_f1": 0.9147286821705427,
+      "sentence_accuracy": 0.9573170731707317,
+      "seconds": 17.9415762424469
+    }
+  ],
+  "test": {
+    "intent_accuracy": 0.9884393063583815,
+    "slot_f1": 0.9538461538461539,
+    "sentence_accuracy": 0.9710982658959537
+  },
+  "per_intent": {
+    "hoi_diem_chuan": {
+      "precision": 1.0,
+      "recall": 1.0,
+      "f1": 1.0,
+      "support": 18
+    },
+    "hoi_dieu_kien_tuyen_sinh": {
+      "precision": 1.0,
+      "recall": 1.0,
+      "f1": 1.0,
+      "support": 19
+    },
+    "hoi_hoc_phi": {
+      "precision": 1.0,
+      "recall": 1.0,
+      "f1": 1.0,
+      "support": 16
+    },
+    "hoi_quy_che_hoc_vu": {
+      "precision": 0.9583333333333334,
+      "recall": 0.9583333333333334,
+      "f1": 0.9583333333333334,
+      "support": 24
+    },
+    "tu_van_lo_trinh": {
+      "precision": 1.0,
+      "recall": 1.0,
+      "f1": 1.0,
+      "support": 16
+    },
+    "chao_hoi": {
+      "precision": 1.0,
+      "recall": 1.0,
+      "f1": 1.0,
+      "support": 12
+    },
+    "ngoai_pham_vi": {
+      "precision": 0.9852941176470589,
+      "recall": 0.9852941176470589,
+      "f1": 0.9852941176470589,
+      "support": 68
+    }
+  },
+  "confusion_matrix": {
+    "labels": [
+      "hoi_diem_chuan",
+      "hoi_dieu_kien_tuyen_sinh",
+      "hoi_hoc_phi",
+      "hoi_quy_che_hoc_vu",
+      "tu_van_lo_trinh",
+      "chao_hoi",
+      "ngoai_pham_vi"
+    ],
+    "matrix": [
+      [
+        18,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      [
+        0,
+        19,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      [
+        0,
+        0,
+        16,
+        0,
+        0,
+        0,
+        0
+      ],
+      [
+        0,
+        0,
+        0,
+        23,
+        0,
+        0,
+        1
+      ],
+      [
+        0,
+        0,
+        0,
+        0,
+        16,
+        0,
+        0
+      ],
+      [
+        0,
+        0,
+        0,
+        0,
+        0,
+        12,
+        0
+      ],
+      [
+        0,
+        0,
+        0,
+        1,
+        0,
+        0,
+        67
+      ]
+    ]
+  },
+  "scope": [
+    {
+      "threshold": 0.0,
+      "in_scope_pushed_out_rate": 0.009523809523809525,
+      "out_of_scope_recall": 0.9852941176470589
+    },
+    {
+      "threshold": 0.3,
+      "in_scope_pushed_out_rate": 0.009523809523809525,
+      "out_of_scope_recall": 0.9852941176470589
+    },
+    {
+      "threshold": 0.5,
+      "in_scope_pushed_out_rate": 0.009523809523809525,
+      "out_of_scope_recall": 0.9852941176470589
+    },
+    {
+      "threshold": 0.7,
+      "in_scope_pushed_out_rate": 0.009523809523809525,
+      "out_of_scope_recall": 0.9852941176470589
+    },
+    {
+      "threshold": 0.9,
+      "in_scope_pushed_out_rate": 0.009523809523809525,
+      "out_of_scope_recall": 1.0
+    }
+  ],
+  "test_errors": 5
+}

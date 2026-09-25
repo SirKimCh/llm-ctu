@@ -1,0 +1,47 @@
+<!doctype html>
+<html lang="vi">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>{% block title %}Trang chủ{% endblock %} | Tư vấn tuyển sinh</title>
+  <link rel="icon" type="image/svg+xml" href="{{ url_for('static', path='favicon.svg') }}">
+  <link rel="preload" href="{{ url_for('static', path='vendor/fonts/be-vietnam-pro-vietnamese-400-normal.woff2') }}" as="font" type="font/woff2" crossorigin>
+  <link rel="stylesheet" href="{{ asset('css/tokens.css') }}">
+  <link rel="stylesheet" href="{{ asset('css/app.css') }}">
+</head>
+<body>
+  <a class="skip-link" href="#main">Bỏ qua, đến nội dung chính</a>
+  {% block header %}
+  <header class="topbar">
+    <a class="brand" href="/">
+      {% include "partials/brand_mark.html" %}
+      <span>Tư vấn tuyển sinh</span>
+    </a>
+    {% if user %}
+    <nav aria-label="Điều hướng chính">
+      <ul class="nav">
+        <li><a href="/chat" {% if active == "chat" %}aria-current="page"{% endif %}>Hỏi đáp</a></li>
+        {% if user.is_admin %}
+        <li><a href="/admin/knowledge" {% if active == "knowledge" %}aria-current="page"{% endif %}>Tri thức</a></li>
+        <li><a href="/admin/users" {% if active == "users" %}aria-current="page"{% endif %}>Người dùng</a></li>
+        {% endif %}
+      </ul>
+    </nav>
+    <div class="account">
+      <span><span class="account__name">{{ user.full_name }}</span> <span class="role-chip">{{ "Quản trị viên" if user.is_admin else "Người dùng" }}</span></span>
+      <form method="post" action="/logout">
+        <button class="btn btn--quiet" type="submit">Đăng xuất</button>
+      </form>
+    </div>
+    {% endif %}
+  </header>
+  {% endblock %}
+  {% block main %}
+  <main id="main" class="page">
+    {% include "partials/flash.html" %}
+    {% block content %}{% endblock %}
+  </main>
+  {% endblock %}
+  {% block scripts %}{% endblock %}
+</body>
+</html>

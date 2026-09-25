@@ -1,0 +1,48 @@
+{% extends "layout.html" %}
+{% block title %}Đăng nhập{% endblock %}
+{% block header %}{% endblock %}
+{% block main %}
+<main id="main" class="login">
+  <section class="login__river" aria-labelledby="river-title">
+    <a class="brand" href="/login">
+      {% include "partials/brand_mark.html" %}
+      <span>Tư vấn tuyển sinh</span>
+    </a>
+    <h2 id="river-title">Hỏi về tuyển sinh và học vụ, nhận câu trả lời từ dữ liệu của trường.</h2>
+    <ul class="chat-preview" aria-label="Ví dụ một đoạn hỏi đáp">
+      <li class="bubble bubble--user"><span class="bubble__who">Bạn</span>Cho mình hỏi điểm chuẩn ngành Hệ thống thông tin?</li>
+      <li class="bubble bubble--bot"><span class="bubble__who">Trợ lý</span>Bạn muốn xem theo phương thức nào: điểm thi tốt nghiệp THPT hay học bạ?</li>
+      <li class="bubble bubble--user"><span class="bubble__who">Bạn</span>Điểm thi THPT, năm gần nhất nhé.</li>
+    </ul>
+    <svg class="login__wave" viewBox="0 0 1200 96" preserveAspectRatio="none" aria-hidden="true" focusable="false">
+      <path d="M0 40c150-30 300 30 450 0s300-30 450 0 225 25 300 10v46H0z" fill="#0E6E78" opacity="0.55"/>
+      <path d="M0 64c160-26 320 26 480 0s320-26 480 0 180 18 240 8v24H0z" fill="#B7791F" opacity="0.75"/>
+    </svg>
+  </section>
+  <section class="login__form">
+    <div class="login__card">
+      <h1>Đăng nhập</h1>
+      <p>Dùng tài khoản do quản trị viên cấp.</p>
+      {% if error %}
+      <div class="alert alert--error" role="alert" id="login-error">
+        {% include "partials/alert_icon.html" %}
+        <span>{{ error }}</span>
+      </div>
+      {% endif %}
+      <form method="post" action="/login" novalidate>
+        <div class="field">
+          <label for="username">Tên đăng nhập</label>
+          <input class="input" id="username" name="username" autocomplete="username" required value="{{ username or '' }}"
+                 {% if error %}aria-invalid="true" aria-describedby="login-error"{% endif %} autofocus>
+        </div>
+        <div class="field">
+          <label for="password">Mật khẩu</label>
+          <input class="input" id="password" name="password" type="password" autocomplete="current-password" required
+                 {% if error %}aria-invalid="true" aria-describedby="login-error"{% endif %}>
+        </div>
+        <button class="btn btn--primary btn--block" type="submit">Đăng nhập</button>
+      </form>
+    </div>
+  </section>
+</main>
+{% endblock %}

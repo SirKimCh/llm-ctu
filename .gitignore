@@ -216,3 +216,11 @@ __marimo__/
 
 # Streamlit
 .streamlit/secrets.toml
+/.idea
+/.playwright-mcp
+CLAUDE.md
+/docs
+/docsAI
+/FinalPaper
+/tests
+artifacts/nlu/model.safetensors

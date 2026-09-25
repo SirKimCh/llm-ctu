@@ -1,0 +1,71 @@
+services:
+  mysql:
+    image: mysql:8.0
+    restart: unless-stopped
+    environment:
+      MYSQL_ROOT_PASSWORD: ${MYSQL_ROOT_PASSWORD:?Thieu MYSQL_ROOT_PASSWORD trong .env}
+      MYSQL_DATABASE: ${DB_NAME:?Thieu DB_NAME trong .env}
+      MYSQL_USER: ${DB_USER:?Thieu DB_USER trong .env (khong dung root)}
+      MYSQL_PASSWORD: ${DB_PASSWORD:?Thieu DB_PASSWORD trong .env}
+      TZ: ${TZ:-Asia/Ho_Chi_Minh}
+    command: --character-set-server=utf8mb4 --collation-server=utf8mb4_unicode_ci --ngram-token-size=2 --default-time-zone=+07:00
+    volumes:
+      - mysql-data:/var/lib/mysql
+    healthcheck:
+      test: ["CMD", "mysqladmin", "ping", "-h", "localhost"]
+      interval: 10s
+      retries: 10
+
+  ollama:
+    image: ollama/ollama
+    restart: unless-stopped
+    volumes:
+      - ollama-data:/root/.ollama
+    healthcheck:
+      test: ["CMD", "ollama", "list"]
+      interval: 10s
+      retries: 10
+
+  ollama-init:
+    image: ollama/ollama
+    depends_on:
+      ollama:
+        condition: service_healthy
+    environment:
+      OLLAMA_HOST: http://ollama:11434
+    entrypoint: ["/bin/sh", "-c", "ollama list | grep -q \"^${OLLAMA_MODEL:?Thieu OLLAMA_MODEL trong .env} \" || ollama pull \"${OLLAMA_MODEL}\""]
+    restart: "no"
+
+  app:
+    build: .
+    restart: unless-stopped
+    volumes:
+      - ./.env:/app/.env:ro
+    environment:
+      APP_ENV: production
+      APP_HOST: 0.0.0.0
+      APP_PORT: ${APP_PORT:-8000}
+      DB_HOST: mysql
+      DB_PORT: "3306"
+      OLLAMA_BASE_URL: http://ollama:11434
+      TZ: ${TZ:-Asia/Ho_Chi_Minh}
+    depends_on:
+      mysql:
+        condition: service_healthy
+      ollama-init:
+        condition: service_completed_successfully
+    ports:
+      - "${APP_PORT:-8000}:${APP_PORT:-8000}"
+    healthcheck:
+      test: ["CMD", "python", "-c", "import os, urllib.request; urllib.request.urlopen(f\"http://127.0.0.1:{os.environ['APP_PORT']}/health\")"]
+      interval: 30s
+      start_period: 120s
+    logging:
+      driver: json-file
+      options:
+        max-size: "10m"
+        max-file: "5"
+
+volumes:
+  mysql-data: {}
+  ollama-data: {}

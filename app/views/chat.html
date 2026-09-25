@@ -1,0 +1,90 @@
+{% extends "layout.html" %}
+{% block title %}Hỏi đáp{% endblock %}
+{% block main %}
+<main id="main" class="chat" data-conversation-id="{{ conversation.id if conversation else '' }}">
+  <aside class="chat__side" aria-label="Các cuộc trò chuyện">
+    <a class="btn btn--primary btn--block" href="/chat">Cuộc trò chuyện mới</a>
+    <details class="chat__history">
+      <summary>Cuộc trò chuyện trước ({{ conversations.total }})</summary>
+      {% if conversations.items %}
+      <ul class="chat__list">
+        {% for item in conversations.items %}
+        <li>
+          <a href="/chat/{{ item.id }}" {% if conversation and item.id == conversation.id %}aria-current="page"{% endif %}>
+            <span class="chat__list-title">{{ item.title or "Chưa có câu hỏi" }}</span>
+            <span class="chat__list-time">{{ item.updated_at|vn_datetime }}</span>
+          </a>
+        </li>
+        {% endfor %}
+      </ul>
+      {% if conversations.pages > 1 %}{% with page=conversations %}{% include "partials/pagination.html" %}{% endwith %}{% endif %}
+      {% else %}
+      <p class="chat__none">Chưa có cuộc trò chuyện nào. Câu hỏi đầu tiên sẽ mở một cuộc trò chuyện mới.</p>
+      {% endif %}
+    </details>
+  </aside>
+
+  <section class="chat__main" aria-labelledby="chat-title">
+    <h1 id="chat-title" class="chat__title">{{ conversation.title if conversation and conversation.title else "Cuộc trò chuyện mới" }}</h1>
+
+    <ol class="chat__log" role="log" aria-live="polite" aria-label="Nội dung trò chuyện">
+      {% for message in (conversation.messages if conversation else []) %}
+      <li class="bubble {{ 'bubble--user' if message.role == 'user' else 'bubble--bot' }}">
+        <span class="bubble__who">{{ "Bạn" if message.role == "user" else "Trợ lý" }}</span>
+        <p class="bubble__text">{{ message.content }}</p>
+        {% if message.sources %}
+        <div class="bubble__sources">
+          <span>Nguồn</span>
+          <ul>
+            {% for url in message.sources %}
+            <li><a href="{{ url }}" target="_blank" rel="noopener noreferrer">{{ url }}</a></li>
+            {% endfor %}
+          </ul>
+        </div>
+        {% endif %}
+      </li>
+      {% endfor %}
+    </ol>
+
+    <div class="chat__empty" {% if conversation and conversation.messages %}hidden{% endif %}>
+      <h2>Bạn muốn hỏi gì về tuyển sinh?</h2>
+      <p>Trợ lý trả lời từ dữ liệu tuyển sinh và đào tạo của trường. Chọn một câu gợi ý hoặc tự gõ câu hỏi.</p>
+      <h3 id="suggest-title">Gợi ý câu hỏi</h3>
+      <ul class="suggestions" aria-labelledby="suggest-title">
+        <li><button type="button" class="suggestion">Điểm chuẩn ngành Công nghệ thông tin năm 2025 là bao nhiêu?</button></li>
+        <li><button type="button" class="suggestion">Học phí ngành Kỹ thuật phần mềm một năm bao nhiêu?</button></li>
+        <li><button type="button" class="suggestion">Xét tuyển bằng học bạ cần điều kiện gì?</button></li>
+        <li><button type="button" class="suggestion">Khi nào sinh viên bị cảnh báo học vụ?</button></li>
+      </ul>
+    </div>
+
+    <div class="chat__dock">
+      <p class="chat__typing" role="status"></p>
+      <div class="context" data-state='{{ (conversation.state if conversation else {})|tojson }}' hidden>
+        <span class="context__label">Trợ lý đang nhớ</span>
+        <ul class="context__chips"></ul>
+      </div>
+      <form class="composer" novalidate>
+        <label class="composer__label" for="question">Câu hỏi của bạn</label>
+        <textarea class="composer__input" id="question" name="text" rows="1" maxlength="1000" required autofocus
+                  placeholder="Hỏi về điểm chuẩn, học phí, điều kiện tuyển sinh…" aria-describedby="composer-hint composer-error"></textarea>
+        <button class="btn btn--primary" type="submit">Gửi</button>
+        <p class="composer__hint" id="composer-hint">Enter để gửi, Shift + Enter để xuống dòng.</p>
+        <p class="composer__error" id="composer-error" role="alert"></p>
+      </form>
+    </div>
+  </section>
+</main>
+
+<template id="bubble-template">
+  <li class="bubble">
+    <span class="bubble__who"></span>
+    <p class="bubble__text"></p>
+    <div class="bubble__sources" hidden><span>Nguồn</span><ul></ul></div>
+  </li>
+</template>
+{% endblock %}
+{% block scripts %}
+<script type="application/json" id="intent-labels">{{ intent_labels|tojson }}</script>
+<script src="{{ asset('js/chat.js') }}" defer></script>
+{% endblock %}

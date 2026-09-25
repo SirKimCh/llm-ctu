@@ -1,0 +1,164 @@
+{"text": "cho em hỏi ngành Kỹ thuật phần mềm xét học bạ cần bao nhiêu điểm?", "intent": "hoi_diem_chuan", "entities": [{"start": 17, "end": 34, "label": "nganh_hoc"}, {"start": 39, "end": 45, "label": "phuong_thuc"}]}
+{"text": "ad oi em muon xem diem chuan nam 2024 vay", "intent": "hoi_diem_chuan", "entities": [{"start": 33, "end": 37, "label": "nam"}]}
+{"text": "mình muốn hỏi điểm chuẩn ngành công nghệ thực phẩm chất lượng cao năm 2025 ạ?", "intent": "hoi_diem_chuan", "entities": [{"start": 31, "end": 50, "label": "nganh_hoc"}, {"start": 70, "end": 74, "label": "nam"}]}
+{"text": "mình muốn hỏi điểm chuẩn điểm học bạ ngành Sư phạm Sinh học nhé", "intent": "hoi_diem_chuan", "entities": [{"start": 25, "end": 36, "label": "phuong_thuc"}, {"start": 43, "end": 59, "label": "nganh_hoc"}]}
+{"text": "minh muon hoi ky thuat o to diem chuan bao nhieu vay ad vay", "intent": "hoi_diem_chuan", "entities": [{"start": 14, "end": 27, "label": "nganh_hoc"}]}
+{"text": "điểm chuẩn Công nghệ kỹ thuật hóa học so với năm 2024 tăng hay giảm vậy", "intent": "hoi_diem_chuan", "entities": [{"start": 11, "end": 37, "label": "nganh_hoc"}, {"start": 49, "end": 53, "label": "nam"}]}
+{"text": "cho em hoi diem chuan nganh quan ly thuy san chat luong cao nam 2020 nhe", "intent": "hoi_diem_chuan", "entities": [{"start": 28, "end": 44, "label": "nganh_hoc"}, {"start": 64, "end": 68, "label": "nam"}]}
+{"text": "ad ơi điểm chuẩn Hệ thống thông tin so với năm 2025 tăng hay giảm nhé", "intent": "hoi_diem_chuan", "entities": [{"start": 17, "end": 35, "label": "nganh_hoc"}, {"start": 47, "end": 51, "label": "nam"}]}
+{"text": "ad oi nganh Kien truc xet diem thi tot nghiep THPT can bao nhieu diem", "intent": "hoi_diem_chuan", "entities": [{"start": 12, "end": 21, "label": "nganh_hoc"}, {"start": 26, "end": 50, "label": "phuong_thuc"}]}
+{"text": "ad oi tra cuu diem chuan nganh Ky thuat dieu khien va tu dong hoa nhe", "intent": "hoi_diem_chuan", "entities": [{"start": 31, "end": 65, "label": "nganh_hoc"}]}
+{"text": "ad ơi Giáo dục Tiểu học năm 2020 lấy bao nhiêu điểm ạ?", "intent": "hoi_diem_chuan", "entities": [{"start": 6, "end": 23, "label": "nganh_hoc"}, {"start": 28, "end": 32, "label": "nam"}]}
+{"text": "mình muốn hỏi điểm chuẩn xét tuyển thẳng năm 2022 vậy", "intent": "hoi_diem_chuan", "entities": [{"start": 25, "end": 40, "label": "phuong_thuc"}, {"start": 45, "end": 49, "label": "nam"}]}
+{"text": "ad oi diem chuan diem hoc ba nganh Quan ly xay dung vay", "intent": "hoi_diem_chuan", "entities": [{"start": 17, "end": 28, "label": "phuong_thuc"}, {"start": 35, "end": 51, "label": "nganh_hoc"}]}
+{"text": "bạn ơi điểm trúng tuyển ngành Sư phạm Tiếng Anh là mấy?", "intent": "hoi_diem_chuan", "entities": [{"start": 30, "end": 47, "label": "nganh_hoc"}]}
+{"text": "cho em hỏi điểm chuẩn Sinh học năm 2020 nhé", "intent": "hoi_diem_chuan", "entities": [{"start": 22, "end": 30, "label": "nganh_hoc"}, {"start": 35, "end": 39, "label": "nam"}]}
+{"text": "cho minh hoi minh muon biet diem dau vao nganh cong nghe che bien thuy san a?", "intent": "hoi_diem_chuan", "entities": [{"start": 47, "end": 74, "label": "nganh_hoc"}]}
+{"text": "cho mình hỏi điểm chuẩn ngành Kỹ thuật ô tô chất lượng cao năm 2020 vậy", "intent": "hoi_diem_chuan", "entities": [{"start": 30, "end": 43, "label": "nganh_hoc"}, {"start": 63, "end": 67, "label": "nam"}]}
+{"text": "năm 2022 điểm chuẩn ngành Ngôn ngữ Pháp theo điểm V-SAT là mấy", "intent": "hoi_diem_chuan", "entities": [{"start": 4, "end": 8, "label": "nam"}, {"start": 26, "end": 39, "label": "nganh_hoc"}, {"start": 45, "end": 55, "label": "phuong_thuc"}]}
+{"text": "minh muon hoi ho so xet tuyen gom nhung gi nhe", "intent": "hoi_dieu_kien_tuyen_sinh", "entities": []}
+{"text": "bạn ơi tổ hợp xét tuyển ngành Hệ thống thông tin năm 2025?", "intent": "hoi_dieu_kien_tuyen_sinh", "entities": [{"start": 30, "end": 48, "label": "nganh_hoc"}, {"start": 53, "end": 57, "label": "nam"}]}
+{"text": "nguong dau vao nam 2024 la bao nhieu vay", "intent": "hoi_dieu_kien_tuyen_sinh", "entities": [{"start": 19, "end": 23, "label": "nam"}]}
+{"text": "ban oi lam sao de xet tuyen vao nganh ky thuat may tinh nhe", "intent": "hoi_dieu_kien_tuyen_sinh", "entities": [{"start": 38, "end": 55, "label": "nganh_hoc"}]}
+{"text": "cho em hỏi trường tuyển bao nhiêu chỉ tiêu ngành CNSH?", "intent": "hoi_dieu_kien_tuyen_sinh", "entities": [{"start": 49, "end": 53, "label": "nganh_hoc"}]}
+{"text": "cho mình hỏi khi nào trường công bố kết quả xét tuyển nhé", "intent": "hoi_dieu_kien_tuyen_sinh", "entities": []}
+{"text": "bạn ơi xác nhận nhập học trực tuyến ở đâu ạ?", "intent": "hoi_dieu_kien_tuyen_sinh", "entities": []}
+{"text": "ad ơi cần những giấy tờ gì để nhập học nhé", "intent": "hoi_dieu_kien_tuyen_sinh", "entities": []}
+{"text": "cho minh hoi chi tieu tuyen sinh nganh cong nghe tai chinh nam 2019?", "intent": "hoi_dieu_kien_tuyen_sinh", "entities": [{"start": 39, "end": 58, "label": "nganh_hoc"}, {"start": 63, "end": 67, "label": "nam"}]}
+{"text": "xét tuyển V-SAT năm 2022 có những điều kiện gì", "intent": "hoi_dieu_kien_tuyen_sinh", "entities": [{"start": 10, "end": 15, "label": "phuong_thuc"}, {"start": 20, "end": 24, "label": "nam"}]}
+{"text": "cho mình hỏi em thi điểm thi thpt thì đăng ký như thế nào vậy", "intent": "hoi_dieu_kien_tuyen_sinh", "entities": [{"start": 20, "end": 33, "label": "phuong_thuc"}]}
+{"text": "ad ơi ngưỡng đầu vào năm 2022 là bao nhiêu", "intent": "hoi_dieu_kien_tuyen_sinh", "entities": [{"start": 25, "end": 29, "label": "nam"}]}
+{"text": "mình muốn hỏi có xét tuyển bằng chứng chỉ IELTS không nhé", "intent": "hoi_dieu_kien_tuyen_sinh", "entities": []}
+{"text": "bạn ơi em thi ưu tiên xét tuyển thì đăng ký như thế nào", "intent": "hoi_dieu_kien_tuyen_sinh", "entities": [{"start": 14, "end": 31, "label": "phuong_thuc"}]}
+{"text": "bạn ơi ngành cntt có thi năng khiếu không ạ", "intent": "hoi_dieu_kien_tuyen_sinh", "entities": [{"start": 13, "end": 17, "label": "nganh_hoc"}]}
+{"text": "ban oi xet tuyen diem thi THPT nam 2026 co nhung dieu kien gi", "intent": "hoi_dieu_kien_tuyen_sinh", "entities": [{"start": 17, "end": 30, "label": "phuong_thuc"}, {"start": 35, "end": 39, "label": "nam"}]}
+{"text": "minh muon hoi phuong thuc uu tien xet tuyen ap dung cho nganh nao vay", "intent": "hoi_dieu_kien_tuyen_sinh", "entities": [{"start": 26, "end": 43, "label": "phuong_thuc"}]}
+{"text": "đóng học phí bằng cách nào vậy", "intent": "hoi_hoc_phi", "entities": []}
+{"text": "cho mình hỏi học phí ngành Kỹ thuật cấp thoát nước bao nhiêu vậy", "intent": "hoi_hoc_phi", "entities": [{"start": 27, "end": 50, "label": "nganh_hoc"}]}
+{"text": "cho em hoi hoc phi moi hoc ky khoang bao nhieu nhe", "intent": "hoi_hoc_phi", "entities": []}
+{"text": "cho mình hỏi học phí chương trình tiên tiến bao nhiêu ạ?", "intent": "hoi_hoc_phi", "entities": []}
+{"text": "học phí có được trả góp không vậy", "intent": "hoi_hoc_phi", "entities": []}
+{"text": "bạn ơi khi nào phải đóng học phí?", "intent": "hoi_hoc_phi", "entities": []}
+{"text": "cho em hoi khi nao phai dong hoc phi a?", "intent": "hoi_hoc_phi", "entities": []}
+{"text": "bạn ơi học phí có được trả góp không?", "intent": "hoi_hoc_phi", "entities": []}
+{"text": "mình muốn hỏi học phí có tăng hàng năm không ạ?", "intent": "hoi_hoc_phi", "entities": []}
+{"text": "ban oi hoc phi nam 2022 la bao nhieu?", "intent": "hoi_hoc_phi", "entities": [{"start": 19, "end": 23, "label": "nam"}]}
+{"text": "cho em hỏi học phí năm 2022 là bao nhiêu", "intent": "hoi_hoc_phi", "entities": [{"start": 23, "end": 27, "label": "nam"}]}
+{"text": "mot tin chi bao nhieu tien?", "intent": "hoi_hoc_phi", "entities": []}
+{"text": "ban oi nganh HTTT hoc phi bao nhieu mot nam a", "intent": "hoi_hoc_phi", "entities": [{"start": 13, "end": 17, "label": "nganh_hoc"}]}
+{"text": "minh muon hoi hoc phi moi hoc ky khoang bao nhieu nhe", "intent": "hoi_hoc_phi", "entities": []}
+{"text": "điểm học phần tính như thế nào?", "intent": "hoi_quy_che_hoc_vu", "entities": []}
+{"text": "can bao nhieu tin chi de tot nghiep nhe", "intent": "hoi_quy_che_hoc_vu", "entities": []}
+{"text": "minh muon hoi dieu kien de duoc cong nhan tot nghiep som vay", "intent": "hoi_quy_che_hoc_vu", "entities": []}
+{"text": "bạn ơi đăng ký học phần như thế nào vậy", "intent": "hoi_quy_che_hoc_vu", "entities": []}
+{"text": "ad oi nghi hoc qua bao lau thi bi xoa ten", "intent": "hoi_quy_che_hoc_vu", "entities": []}
+{"text": "cho em hỏi điều kiện nhận học bổng khuyến khích học tập ạ?", "intent": "hoi_quy_che_hoc_vu", "entities": []}
+{"text": "cho em hỏi bị cảnh báo học vụ mấy lần thì bị đuổi học ạ?", "intent": "hoi_quy_che_hoc_vu", "entities": []}
+{"text": "mình muốn hỏi mỗi học kỳ phải đăng ký tối thiểu bao nhiêu tín chỉ vậy", "intent": "hoi_quy_che_hoc_vu", "entities": []}
+{"text": "quy che hoc vu quy dinh gi ve thi lai vay", "intent": "hoi_quy_che_hoc_vu", "entities": []}
+{"text": "chuan dau ra tieng anh la gi vay", "intent": "hoi_quy_che_hoc_vu", "entities": []}
+{"text": "bạn ơi cần bao nhiêu tín chỉ để tốt nghiệp ạ?", "intent": "hoi_quy_che_hoc_vu", "entities": []}
+{"text": "mình muốn hỏi rớt môn thì học lại thế nào ạ?", "intent": "hoi_quy_che_hoc_vu", "entities": []}
+{"text": "bạn ơi mỗi học kỳ phải đăng ký tối thiểu bao nhiêu tín chỉ ạ?", "intent": "hoi_quy_che_hoc_vu", "entities": []}
+{"text": "cho mình hỏi có được học vượt không vậy", "intent": "hoi_quy_che_hoc_vu", "entities": []}
+{"text": "cho mình hỏi mỗi học kỳ phải đăng ký tối thiểu bao nhiêu tín chỉ", "intent": "hoi_quy_che_hoc_vu", "entities": []}
+{"text": "cho em hỏi điểm rèn luyện có ảnh hưởng tốt nghiệp không ạ?", "intent": "hoi_quy_che_hoc_vu", "entities": []}
+{"text": "cho em hoi chuan dau ra tieng anh la gi?", "intent": "hoi_quy_che_hoc_vu", "entities": []}
+{"text": "bạn ơi học kỳ hè có bắt buộc không nhé", "intent": "hoi_quy_che_hoc_vu", "entities": []}
+{"text": "cho em hỏi nghỉ học quá bao lâu thì bị xóa tên", "intent": "hoi_quy_che_hoc_vu", "entities": []}
+{"text": "ad oi co duoc bao luu ket qua hoc tap khong a", "intent": "hoi_quy_che_hoc_vu", "entities": []}
+{"text": "cho em hỏi cách tính điểm trung bình tích lũy?", "intent": "hoi_quy_che_hoc_vu", "entities": []}
+{"text": "cho mình hỏi chuẩn đầu ra tin học là gì", "intent": "hoi_quy_che_hoc_vu", "entities": []}
+{"text": "cho em hoi sinh vien co duoc chuyen nganh khong", "intent": "hoi_quy_che_hoc_vu", "entities": []}
+{"text": "cho mình hỏi nên chọn ngành kỹ thuật điều khiển và tự động hóa hay ngành truyền thông đa phương tiện ạ", "intent": "tu_van_lo_trinh", "entities": [{"start": 28, "end": 62, "label": "nganh_hoc"}, {"start": 73, "end": 100, "label": "nganh_hoc"}]}
+{"text": "ad oi hoc xong Ky thuat o to co hoc len thac si duoc khong?", "intent": "tu_van_lo_trinh", "entities": [{"start": 15, "end": 28, "label": "nganh_hoc"}]}
+{"text": "muốn làm kỹ sư phần mềm thì học ngành gì nhé", "intent": "tu_van_lo_trinh", "entities": []}
+{"text": "minh muon hoi hoc kinh te ra truong lam gi vay", "intent": "tu_van_lo_trinh", "entities": [{"start": 18, "end": 25, "label": "nganh_hoc"}]}
+{"text": "cho em hỏi sinh viên ngành Kinh doanh quốc tế thực tập ở đâu", "intent": "tu_van_lo_trinh", "entities": [{"start": 27, "end": 45, "label": "nganh_hoc"}]}
+{"text": "minh muon hoi lo trinh 4 nam nganh thu y a?", "intent": "tu_van_lo_trinh", "entities": [{"start": 35, "end": 40, "label": "nganh_hoc"}]}
+{"text": "ad ơi học du lịch cần chuẩn bị kỹ năng gì?", "intent": "tu_van_lo_trinh", "entities": [{"start": 10, "end": 17, "label": "nganh_hoc"}]}
+{"text": "cho em hoi co hoi viec lam nganh khoa hoc du lieu the nao nhe", "intent": "tu_van_lo_trinh", "entities": [{"start": 33, "end": 49, "label": "nganh_hoc"}]}
+{"text": "bạn ơi học an toàn thông tin có khó không ạ", "intent": "tu_van_lo_trinh", "entities": [{"start": 11, "end": 28, "label": "nganh_hoc"}]}
+{"text": "bạn ơi chương trình đào tạo ngành Báo chí gồm những gì ạ?", "intent": "tu_van_lo_trinh", "entities": [{"start": 34, "end": 41, "label": "nganh_hoc"}]}
+{"text": "cho minh hoi chuong trinh dao tao nganh Quan tri dich vu du lich va lu hanh gom nhung gi vay", "intent": "tu_van_lo_trinh", "entities": [{"start": 40, "end": 75, "label": "nganh_hoc"}]}
+{"text": "bạn ơi muốn làm kỹ sư phần mềm thì học ngành gì vậy", "intent": "tu_van_lo_trinh", "entities": []}
+{"text": "cho em hỏi muốn làm giáo viên thì học ngành nào ạ?", "intent": "tu_van_lo_trinh", "entities": []}
+{"text": "cho em hoi sinh vien nganh Khoa hoc du lieu thuc tap o dau vay", "intent": "tu_van_lo_trinh", "entities": [{"start": 27, "end": 43, "label": "nganh_hoc"}]}
+{"text": "co ai o do khong nhe", "intent": "chao_hoi", "entities": []}
+{"text": "good morning a", "intent": "chao_hoi", "entities": []}
+{"text": "cảm ơn nhé mình hiểu rồi!", "intent": "chao_hoi", "entities": []}
+{"text": "xin chao", "intent": "chao_hoi", "entities": []}
+{"text": "có ai ở đó không", "intent": "chao_hoi", "entities": []}
+{"text": "chào buổi tối!", "intent": "chao_hoi", "entities": []}
+{"text": "good morning nhe", "intent": "chao_hoi", "entities": []}
+{"text": "hen gap lai", "intent": "chao_hoi", "entities": []}
+{"text": "good morning", "intent": "chao_hoi", "entities": []}
+{"text": "cám ơn bạn nhé", "intent": "chao_hoi", "entities": []}
+{"text": "cảm ơn nhé mình hiểu rồi ạ", "intent": "chao_hoi", "entities": []}
+{"text": "cho em hỏi điểm số trận chung kết world cup vậy", "intent": "ngoai_pham_vi", "entities": []}
+{"text": "ad ơi viết code python sắp xếp mảng ạ?", "intent": "ngoai_pham_vi", "entities": []}
+{"text": "bạn ơi chứng khoán hôm nay thế nào ạ", "intent": "ngoai_pham_vi", "entities": []}
+{"text": "minh muon hoi khi nao co bao ve mien trung a", "intent": "ngoai_pham_vi", "entities": []}
+{"text": "mình muốn hỏi đăng ký tài khoản ngân hàng online như thế nào", "intent": "ngoai_pham_vi", "entities": []}
+{"text": "cho mình hỏi giá cà phê sữa đá bao nhiêu vậy", "intent": "ngoai_pham_vi", "entities": []}
+{"text": "cho em hỏi tiền thuê trọ ở ninh kiều bao nhiêu một tháng", "intent": "ngoai_pham_vi", "entities": []}
+{"text": "cho em hỏi bao nhiêu tuổi thì được lái ô tô?", "intent": "ngoai_pham_vi", "entities": []}
+{"text": "cho em hoi ban co nguoi yeu chua nhe", "intent": "ngoai_pham_vi", "entities": []}
+{"text": "mình muốn hỏi học bơi như thế nào cho nhanh?", "intent": "ngoai_pham_vi", "entities": []}
+{"text": "cho minh hoi cai lai windows nhu the nao", "intent": "ngoai_pham_vi", "entities": []}
+{"text": "cho mình hỏi một đô la đổi được bao nhiêu tiền việt?", "intent": "ngoai_pham_vi", "entities": []}
+{"text": "mình muốn hỏi chiều cao trung bình người việt là bao nhiêu vậy", "intent": "ngoai_pham_vi", "entities": []}
+{"text": "ban oi cach giam can nhanh nhe", "intent": "ngoai_pham_vi", "entities": []}
+{"text": "ad ơi thời tiết cần thơ ngày mai thế nào vậy", "intent": "ngoai_pham_vi", "entities": []}
+{"text": "cho mình hỏi ca sĩ nào hát hay nhất ạ", "intent": "ngoai_pham_vi", "entities": []}
+{"text": "minh muon hoi tinh giup 25 nhan 4 nhe", "intent": "ngoai_pham_vi", "entities": []}
+{"text": "cho mình hỏi một tô phở ở cần thơ bao nhiêu vậy", "intent": "ngoai_pham_vi", "entities": []}
+{"text": "cho em hỏi cách tải nhạc miễn phí ạ", "intent": "ngoai_pham_vi", "entities": []}
+{"text": "ad oi hoc phi khoa hoc lai xe bao nhieu a?", "intent": "ngoai_pham_vi", "entities": []}
+{"text": "ad ơi khi nào có bão?", "intent": "ngoai_pham_vi", "entities": []}
+{"text": "cho em hỏi chứng khoán phái sinh là gì vậy", "intent": "ngoai_pham_vi", "entities": []}
+{"text": "ad ơi điểm số trận chung kết world cup vậy", "intent": "ngoai_pham_vi", "entities": []}
+{"text": "ad oi ve xe khach di sai gon bao nhieu?", "intent": "ngoai_pham_vi", "entities": []}
+{"text": "minh muon hoi gia ca phe sua da bao nhieu nhe", "intent": "ngoai_pham_vi", "entities": []}
+{"text": "cho mình hỏi vàng sjc bán ra bao nhiêu nhé", "intent": "ngoai_pham_vi", "entities": []}
+{"text": "cho mình số điện thoại người yêu cũ vậy", "intent": "ngoai_pham_vi", "entities": []}
+{"text": "ad ơi tiền điện tháng này bao nhiêu vậy", "intent": "ngoai_pham_vi", "entities": []}
+{"text": "cho minh hoi lam banh mi nhu the nao?", "intent": "ngoai_pham_vi", "entities": []}
+{"text": "minh muon hoi diem so tran chung ket world cup?", "intent": "ngoai_pham_vi", "entities": []}
+{"text": "lương lập trình viên mới ra trường bao nhiêu nhé", "intent": "ngoai_pham_vi", "entities": []}
+{"text": "cho mình hỏi vé xe khách đi sài gòn bao nhiêu vậy", "intent": "ngoai_pham_vi", "entities": []}
+{"text": "cho em hỏi chấm điểm bài văn giúp mình nhé", "intent": "ngoai_pham_vi", "entities": []}
+{"text": "cho em hoi nuoi ca canh nhu the nao a?", "intent": "ngoai_pham_vi", "entities": []}
+{"text": "ad ơi tỷ giá đô la hôm nay ạ?", "intent": "ngoai_pham_vi", "entities": []}
+{"text": "mình muốn hỏi mua điện thoại nào tốt ạ", "intent": "ngoai_pham_vi", "entities": []}
+{"text": "ad ơi metaverse là gì nhé", "intent": "ngoai_pham_vi", "entities": []}
+{"text": "cho minh hoi khi nao bat dau mua mua nhe", "intent": "ngoai_pham_vi", "entities": []}
+{"text": "ad oi nhiet do sai gon hom nay bao nhieu do vay", "intent": "ngoai_pham_vi", "entities": []}
+{"text": "cho em hoi khi nao co bao nhe", "intent": "ngoai_pham_vi", "entities": []}
+{"text": "mình muốn hỏi điểm tín dụng ngân hàng là gì ạ", "intent": "ngoai_pham_vi", "entities": []}
+{"text": "gia ca phe sua da bao nhieu?", "intent": "ngoai_pham_vi", "entities": []}
+{"text": "minh muon hoi cach nau com ngon nhe", "intent": "ngoai_pham_vi", "entities": []}
+{"text": "ban oi ke chuyen cuoi di?", "intent": "ngoai_pham_vi", "entities": []}
+{"text": "bong da viet nam da khi nao nhe", "intent": "ngoai_pham_vi", "entities": []}
+{"text": "ad ơi làm bánh mì như thế nào nhé", "intent": "ngoai_pham_vi", "entities": []}
+{"text": "choi game gi vui a", "intent": "ngoai_pham_vi", "entities": []}
+{"text": "ban oi bong da viet nam da khi nao?", "intent": "ngoai_pham_vi", "entities": []}
+{"text": "ad oi ty so tran mu toi qua a", "intent": "ngoai_pham_vi", "entities": []}
+{"text": "điểm thi ielts của mình có tốt không nhé", "intent": "ngoai_pham_vi", "entities": []}
+{"text": "ad ơi làm thơ về mùa thu nhé", "intent": "ngoai_pham_vi", "entities": []}
+{"text": "cho minh hoi mua dien thoai nao tot a", "intent": "ngoai_pham_vi", "entities": []}
+{"text": "ban oi ty gia do la hom nay nhe", "intent": "ngoai_pham_vi", "entities": []}
+{"text": "ca phe muoi la gi vay", "intent": "ngoai_pham_vi", "entities": []}
+{"text": "bạn ơi mẹo ngủ ngon nhé", "intent": "ngoai_pham_vi", "entities": []}
+{"text": "mình muốn hỏi tỷ giá đô la hôm nay nhé", "intent": "ngoai_pham_vi", "entities": []}
+{"text": "bao nhiêu tuổi thì được lái ô tô ạ?", "intent": "ngoai_pham_vi", "entities": []}
+{"text": "trái đất nặng bao nhiêu?", "intent": "ngoai_pham_vi", "entities": []}
+{"text": "ban oi cuoc gui hang ra bac bao nhieu a", "intent": "ngoai_pham_vi", "entities": []}
+{"text": "ad oi laptop choi game tam bao nhieu tien vay", "intent": "ngoai_pham_vi", "entities": []}
+{"text": "cho em hỏi làm sao để nổi tiếng trên tiktok nhé", "intent": "ngoai_pham_vi", "entities": []}
+{"text": "cho em hỏi tỷ số trận mu tối qua ạ?", "intent": "ngoai_pham_vi", "entities": []}
+{"text": "cho mình hỏi chơi game gì vui vậy", "intent": "ngoai_pham_vi", "entities": []}
+{"text": "ad ơi vé máy bay tết về hà nội bao nhiêu", "intent": "ngoai_pham_vi", "entities": []}
+{"text": "cho minh hoi hom nay troi co mua khong", "intent": "ngoai_pham_vi", "entities": []}
+{"text": "diem so tran chung ket world cup vay", "intent": "ngoai_pham_vi", "entities": []}
+{"text": "cho em hỏi khi nào bắt đầu mùa mưa vậy", "intent": "ngoai_pham_vi", "entities": []}

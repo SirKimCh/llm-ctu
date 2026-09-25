@@ -1,0 +1,10 @@
+{% extends "layout.html" %}
+{% block title %}{{ heading }}{% endblock %}
+{% block content %}
+<div class="error-page">
+  <p class="error-page__code">Mã lỗi {{ status }}</p>
+  <h1>{{ heading }}</h1>
+  <p>{{ detail }}</p>
+  <a class="btn btn--quiet" href="/">Về trang chủ</a>
+</div>
+{% endblock %}

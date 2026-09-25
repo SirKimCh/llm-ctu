@@ -1,0 +1,153 @@
+{% extends "layout.html" %}
+{% block title %}Tri thức{% endblock %}
+{% block content %}
+<div class="page__intro">
+  <h1>Tri thức</h1>
+  <p>Dữ liệu trợ lý dùng để trả lời: điểm chuẩn, điều kiện tuyển sinh, học phí, quy chế học vụ, lộ trình học tập.</p>
+</div>
+
+<div class="sources">
+  <section class="panel" aria-labelledby="import-title">
+    <h2 id="import-title">Nhập từ Excel</h2>
+    <p class="panel__lead">Tải file mẫu, điền mỗi dòng một mục tri thức, rồi nhập lại. Nhập lại cùng chủ đề, ngành, năm, tiêu đề sẽ cập nhật nội dung.</p>
+    {% if import_error %}
+    <div class="alert alert--error" role="alert">
+      {% include "partials/alert_icon.html" %}
+      <span>{{ import_error }}</span>
+    </div>
+    {% endif %}
+    {% if import_result %}
+    <div class="alert alert--error" role="alert">
+      {% include "partials/alert_icon.html" %}
+      <span>{{ import_result.message }}</span>
+    </div>
+    <div class="table-wrap table-wrap--compact">
+      <table class="table">
+        <caption>Lỗi cần sửa trong tệp</caption>
+        <thead><tr><th scope="col">Dòng</th><th scope="col">Cột</th><th scope="col">Lý do</th></tr></thead>
+        <tbody>
+          {% for error in import_result.errors %}
+          <tr><td class="nowrap">Dòng {{ error.row }}</td><td>{{ error.column }}</td><td>{{ error.message }}</td></tr>
+          {% endfor %}
+        </tbody>
+      </table>
+    </div>
+    {% endif %}
+    <a class="btn btn--quiet" href="/admin/knowledge/template" download>Tải file mẫu (.xlsx)</a>
+    <form class="upload" method="post" action="/admin/knowledge/import" enctype="multipart/form-data">
+      <div class="field">
+        <label for="file">Tệp tri thức</label>
+        <input class="input input--file" id="file" name="file" type="file" required
+               accept=".xlsx,application/vnd.openxmlformats-officedocument.spreadsheetml.sheet" aria-describedby="file-hint">
+        <p class="field__hint" id="file-hint">Chỉ nhận .xlsx, tối đa {{ upload_max_mb }} MB. Có lỗi ở bất kỳ dòng nào thì chưa nhập dòng nào.</p>
+      </div>
+      <button class="btn btn--primary" type="submit">Nhập tri thức</button>
+    </form>
+  </section>
+  <section class="panel" aria-labelledby="crawl-title">
+    <h2 id="crawl-title">Cào trang web</h2>
+    <p class="panel__lead">Dán đường dẫn các trang của trường, mỗi dòng một đường dẫn. Hệ thống lấy nội dung qua Brightdata, bỏ phần menu, chia thành đoạn và lưu làm tri thức. Cào lại một trang sẽ thay nội dung cũ của trang đó.</p>
+    {% if not crawl_enabled %}
+    <div class="alert alert--info" role="status">
+      {% with icon_kind = "info" %}{% include "partials/alert_icon.html" %}{% endwith %}
+      <span>Chưa cấu hình Brightdata: điền BRIGHTDATA_API_TOKEN và BRIGHTDATA_ZONE trong .env rồi khởi động lại ứng dụng. Nhập Excel vẫn dùng được.</span>
+    </div>
+    {% endif %}
+    {% if crawl_error %}
+    <div class="alert alert--error" role="alert">
+      {% with icon_kind = "error" %}{% include "partials/alert_icon.html" %}{% endwith %}
+      <span>{{ crawl_error }}</span>
+    </div>
+    {% endif %}
+    <form method="post" action="/admin/knowledge/crawl-jobs">
+      <div class="field">
+        <label for="urls">Đường dẫn cần cào</label>
+        <textarea class="input input--area" id="urls" name="urls" rows="4" required aria-describedby="urls-hint"
+                  placeholder="https://tuyensinh.ctu.edu.vn/…">{{ crawl_form.urls }}</textarea>
+        <p class="field__hint" id="urls-hint">Tối đa {{ crawl_max_urls }} đường dẫn mỗi lần. Mỗi đường dẫn tốn 1 lượt Brightdata.</p>
+      </div>
+      <div class="field">
+        <label for="crawl-intent">Gán chủ đề cho các trang này</label>
+        <select class="input" id="crawl-intent" name="intent">
+          <option value="">Chưa gán (trợ lý tìm theo nội dung)</option>
+          {% for value, label in intents.items() %}
+          <option value="{{ value }}" {% if crawl_form.intent == value %}selected{% endif %}>{{ label }}</option>
+          {% endfor %}
+        </select>
+      </div>
+      <button class="btn btn--primary" type="submit" {% if not crawl_enabled or (job and job.active) %}disabled{% endif %}>Bắt đầu cào</button>
+    </form>
+    {% if job %}
+    <div class="progress" data-job-url="/admin/knowledge/crawl-jobs/{{ job.id }}" data-active="{{ 'true' if job.active else 'false' }}">
+      <label for="crawl-progress">Tiến trình cào #{{ job.id }}</label>
+      <progress id="crawl-progress" max="{{ job.total or 1 }}" value="{{ job.done + job.failed }}"></progress>
+      <p class="progress__status" aria-live="polite">{{ job.summary }}</p>
+      <ul class="progress__errors">
+        {% for error in job.errors %}
+        <li>{% if error.url %}<span class="progress__url">{{ error.url }}</span>: {% endif %}{{ error.message }}</li>
+        {% endfor %}
+      </ul>
+    </div>
+    {% endif %}
+  </section>
+</div>
+
+<section class="knowledge-list" aria-labelledby="list-title">
+  <h2 id="list-title">Danh sách tri thức</h2>
+  <form class="filters" method="get" action="/admin/knowledge" role="search">
+    <div class="field">
+      <label for="intent">Chủ đề</label>
+      <select class="input" id="intent" name="intent">
+        <option value="">Tất cả chủ đề</option>
+        {% for value, label in intents.items() %}
+        <option value="{{ value }}" {% if filters.intent == value %}selected{% endif %}>{{ label }}</option>
+        {% endfor %}
+      </select>
+    </div>
+    <div class="field">
+      <label for="q">Tìm theo tiêu đề</label>
+      <input class="input" id="q" name="q" type="search" value="{{ filters.q }}">
+    </div>
+    <button class="btn btn--quiet" type="submit">Lọc</button>
+  </form>
+  <div class="table-wrap">
+    <table class="table">
+      <caption>{{ entries.total }} mục tri thức</caption>
+      <thead>
+        <tr>
+          <th scope="col">Chủ đề</th>
+          <th scope="col">Tiêu đề</th>
+          <th scope="col">Ngành</th>
+          <th scope="col">Năm</th>
+          <th scope="col">Nguồn</th>
+          <th scope="col">Ngày tạo</th>
+        </tr>
+      </thead>
+      <tbody>
+        {% for item in entries.items %}
+        <tr class="row">
+          <td><span class="role-chip">{{ item.intent_label }}</span></td>
+          <td>
+            {{ item.title }}
+            <p class="table__excerpt">{{ item.content | truncate(160) }}</p>
+          </td>
+          <td>{{ item.major or "Mọi ngành" }}</td>
+          <td>{{ item.year or "—" }}</td>
+          <td>{% if item.source_url %}<a href="{{ item.source_url }}" target="_blank" rel="noopener noreferrer">{{ item.source_label }}</a>{% else %}{{ item.source_label }}{% endif %}</td>
+          <td>{{ item.created_at | vn_datetime }}</td>
+        </tr>
+        {% else %}
+        <tr><td colspan="6" class="table__empty">
+          {% if filters.intent or filters.q %}Không có mục nào khớp bộ lọc. <a href="/admin/knowledge">Xem tất cả</a>.
+          {% else %}Chưa có tri thức. Tải file mẫu ở trên, điền dữ liệu rồi nhập để trợ lý có dữ liệu trả lời.{% endif %}
+        </td></tr>
+        {% endfor %}
+      </tbody>
+    </table>
+    {% with page = entries %}{% include "partials/pagination.html" %}{% endwith %}
+  </div>
+</section>
+{% endblock %}
+{% block scripts %}
+<script src="{{ asset('js/crawl.js') }}" defer></script>
+{% endblock %}

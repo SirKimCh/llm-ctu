@@ -1,0 +1,63 @@
+[project]
+name = "llm-ctu"
+version = "0.1.0"
+description = "Chatbot tư vấn tuyển sinh/đào tạo — Đồ án NLP Đề tài 4"
+requires-python = ">=3.12,<3.13"
+dependencies = [
+    "bcrypt>=5.0.0",
+    "cryptography>=50.0.1",
+    "fastapi>=0.141.1",
+    "httpx>=0.28.1",
+    "itsdangerous>=2.2.0",
+    "jinja2>=3.1.6",
+    "langgraph>=1.2.12",
+    "openpyxl>=3.1.5",
+    "pydantic-settings>=2.15.0",
+    "pymysql>=1.2.3",
+    "python-multipart>=0.0.32",
+    "pyvi>=0.1.1",
+    "sqlalchemy>=2.0.54",
+    "torch>=2.11.0",
+    "transformers>=5.17.0",
+    "uvicorn>=0.53.0",
+]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+addopts = "-m 'not eval'"
+markers = [
+    "ollama: gọi Ollama thật trên máy dev",
+    "nlu: cần model NLU đã huấn luyện trong NLU_MODEL_DIR",
+    "eval: đánh giá đầu–cuối (NLU + Ollama thật, vài phút) — chạy riêng: uv run pytest tests/eval -m eval -s",
+]
+filterwarnings = ["ignore::SyntaxWarning"]
+
+[dependency-groups]
+dev = [
+    "httpx2>=2.13.1",
+    "pytest>=9.1.1",
+]
+train = [
+    "ipykernel>=7.3.0",
+    "jupyter>=1.1.1",
+    "seqeval>=1.2.2",
+]
+
+[[tool.uv.index]]
+name = "pytorch-cu128"
+url = "https://download.pytorch.org/whl/cu128"
+explicit = true
+
+[[tool.uv.index]]
+name = "pytorch-cpu"
+url = "https://download.pytorch.org/whl/cpu"
+explicit = true
+
+[tool.uv.sources]
+torch = [
+    { index = "pytorch-cu128", marker = "sys_platform == 'win32'" },
+    { index = "pytorch-cpu", marker = "sys_platform == 'linux'" },
+]
+
+[tool.uv]
+cache-dir = ".uv-cache"

@@ -1,0 +1,6 @@
+{% if flash %}
+<div class="alert alert--{{ flash.kind }}" role="{{ 'alert' if flash.kind == 'error' else 'status' }}">
+  {% include "partials/alert_icon.html" %}
+  <span>{{ flash.text }}</span>
+</div>
+{% endif %}

@@ -1,0 +1,20 @@
+{
+  "intents": [
+    "hoi_diem_chuan",
+    "hoi_dieu_kien_tuyen_sinh",
+    "hoi_hoc_phi",
+    "hoi_quy_che_hoc_vu",
+    "tu_van_lo_trinh",
+    "chao_hoi",
+    "ngoai_pham_vi"
+  ],
+  "slot_labels": [
+    "O",
+    "B-nganh_hoc",
+    "I-nganh_hoc",
+    "B-nam",
+    "I-nam",
+    "B-phuong_thuc",
+    "I-phuong_thuc"
+  ]
+}

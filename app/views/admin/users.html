@@ -1,0 +1,77 @@
+{% extends "layout.html" %}
+{% block title %}Người dùng{% endblock %}
+{% block content %}
+<div class="page__intro">
+  <h1>Người dùng</h1>
+  <p>Chỉ quản trị viên cấp tài khoản. Người dùng không tự đăng ký và không tự đổi mật khẩu.</p>
+</div>
+<div class="split">
+  <div class="table-wrap">
+    <table class="table">
+      <caption>{{ users.total }} tài khoản</caption>
+      <thead>
+        <tr>
+          <th scope="col">Tên đăng nhập</th>
+          <th scope="col">Họ tên</th>
+          <th scope="col">Vai trò</th>
+          <th scope="col">Ngày tạo</th>
+        </tr>
+      </thead>
+      <tbody>
+        {% for item in users.items %}
+        <tr class="row">
+          <td>{{ item.username }}</td>
+          <td>{{ item.full_name }}</td>
+          <td><span class="role-chip">{{ ROLE_LABELS.get(item.role, item.role) }}</span></td>
+          <td>{{ item.created_at | vn_datetime }}</td>
+        </tr>
+        {% else %}
+        <tr><td colspan="4" class="table__empty">Chưa có tài khoản nào.</td></tr>
+        {% endfor %}
+      </tbody>
+    </table>
+    {% with page = users %}{% include "partials/pagination.html" %}{% endwith %}
+  </div>
+
+  <section class="panel" aria-labelledby="create-title">
+    <h2 id="create-title">Tạo tài khoản</h2>
+    {% if error %}
+    <div class="alert alert--error" role="alert" id="form-error" tabindex="-1">
+      {% include "partials/alert_icon.html" %}
+      <span>{{ error }}</span>
+    </div>
+    {% endif %}
+    <form method="post" action="/admin/users" novalidate>
+      {% set fields = [
+        ("username", "Tên đăng nhập", "text", "off", "Chữ thường không dấu, số và . _ - (3–50 ký tự). Ví dụ: sv.nguyenvanan"),
+        ("full_name", "Họ tên", "text", "off", ""),
+        ("password", "Mật khẩu (6–72 ký tự)", "password", "new-password", "Gửi mật khẩu cho người dùng qua kênh riêng, không qua nơi công khai."),
+      ] %}
+      {% for name, label, type, autocomplete, hint in fields %}
+      <div class="field">
+        <label for="{{ name }}">{{ label }}</label>
+        {% set described = [] %}
+        {% if hint %}{% set _ = described.append(name ~ "-hint") %}{% endif %}
+        {% if errors.get(name) %}{% set _ = described.append(name ~ "-error") %}{% endif %}
+        <input class="input" id="{{ name }}" name="{{ name }}" type="{{ type }}" autocomplete="{{ autocomplete }}" required
+               {% if type != "password" %}value="{{ form.get(name, '') }}"{% endif %}
+               {% if errors.get(name) %}aria-invalid="true"{% endif %}
+               {% if described %}aria-describedby="{{ described | join(' ') }}"{% endif %}>
+        {% if hint %}<p class="field__hint" id="{{ name }}-hint">{{ hint }}</p>{% endif %}
+        {% if errors.get(name) %}<p class="field__error" id="{{ name }}-error">{{ errors[name] }}</p>{% endif %}
+      </div>
+      {% endfor %}
+      <div class="field">
+        <label for="role">Vai trò</label>
+        <select class="input" id="role" name="role" {% if errors.get("role") %}aria-invalid="true" aria-describedby="role-error"{% endif %}>
+          {% for value, label in ROLE_LABELS | dictsort(reverse=true) %}
+          <option value="{{ value }}" {% if form.get("role") == value %}selected{% endif %}>{{ label }}</option>
+          {% endfor %}
+        </select>
+        {% if errors.get("role") %}<p class="field__error" id="role-error">{{ errors["role"] }}</p>{% endif %}
+      </div>
+      <button class="btn btn--primary btn--block" type="submit">Tạo tài khoản</button>
+    </form>
+  </section>
+</div>
+{% endblock %}
